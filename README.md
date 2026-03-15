@@ -1,4 +1,4 @@
-# sup, I'm m741o. not much more to say lol. insight & instinct is my thing.
+# insight, instinct.
 
 ## my projects:
 * [fast flag archive;](https://github.com/m741o/ffs)
