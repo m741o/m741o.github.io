@@ -1,5 +1,3 @@
-# insight, instinct.
-
 ## my projects:
 * [ffs;](https://www.youtube.com/watch?v=aSFkX5oPkzU)
 * [ffstool.](https://www.youtube.com/watch?v=aSFkX5oPkzU)
