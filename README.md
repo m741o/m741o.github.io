@@ -1,7 +1,7 @@
 # insight, instinct.
 
 ## my projects:
-* [fast flag archive;](https://www.youtube.com/watch?v=aSFkX5oPkzU)
+* [ffs;](https://www.youtube.com/watch?v=aSFkX5oPkzU)
 * [ffstool.](https://www.youtube.com/watch?v=aSFkX5oPkzU)
 
 ## my profiles:
