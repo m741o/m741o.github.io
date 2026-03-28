@@ -1,6 +1,6 @@
 ## my projects:
-* [ffs;](https://www.youtube.com/watch?v=aSFkX5oPkzU)
-* [ffstool.](https://www.youtube.com/watch?v=aSFkX5oPkzU)
+* ffs; (find it if you want it)
+* ffstool (WIP).
 
 ## my profiles:
 * [my discord server;](https://discord.gg/YKRW3Egv5G)
