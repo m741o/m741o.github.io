@@ -70,40 +70,6 @@
       50%       { opacity: 0; }
     }
 
-    .tagline {
-      margin-top: 10px;
-      font-size: 0.78rem;
-      color: var(--muted);
-      letter-spacing: 0.12em;
-    }
-
-    /* ── NAV BAR ── */
-    nav {
-      border-bottom: 1px solid #ccc;
-      padding: 10px 0;
-      display: flex;
-      gap: 0;
-    }
-
-    nav a {
-      font-family: var(--font-display);
-      font-size: 0.82rem;
-      letter-spacing: 0.1em;
-      color: var(--black);
-      text-decoration: none;
-      padding: 4px 14px 4px 0;
-      border-right: 1px solid #bbb;
-      margin-right: 14px;
-    }
-
-    nav a:last-child {
-      border-right: none;
-    }
-
-    nav a:hover {
-      color: var(--red);
-    }
-
     /* ── MAIN GRID ── */
     main {
       display: grid;
@@ -245,36 +211,6 @@
       transition: transform 0.15s ease;
     }
 
-    /* ── FOOTER ── */
-    footer {
-      margin-top: 32px;
-      border-top: 3px solid var(--black);
-      padding-top: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .footer-brand {
-      font-family: var(--font-display);
-      font-size: 0.72rem;
-      letter-spacing: 0.15em;
-      color: var(--black);
-    }
-
-    .footer-brand span {
-      color: var(--red);
-    }
-
-    .footer-meta {
-      font-size: 0.68rem;
-      color: var(--muted);
-      letter-spacing: 0.08em;
-      text-align: right;
-    }
-
     /* ── RESPONSIVE ── */
     @media (max-width: 580px) {
       main {
@@ -302,13 +238,8 @@
 
   <header>
     <div class="site-title">m7<span class="accent">4</span>1o<span class="cursor">_</span></div>
-    <div class="tagline">// projects &amp; socials</div>
-  </header>
 
-  <nav>
-    <a href="#projects">projects</a>
-    <a href="#socials">socials</a>
-  </nav>
+  </header>
 
   <main>
     <section id="projects">
@@ -327,7 +258,7 @@
           ffstool
           <span class="project-status wip">wip</span>
         </div>
-        <div class="project-desc">stay tuned.</div>
+        <div class="project-desc">work in progress.</div>
       </div>
 
     </section>
@@ -396,20 +327,6 @@
 
     </section>
   </main>
-
-  <footer>
-    <div class="footer-brand">m7<span>4</span>1o</div>
-    <div class="footer-meta" id="last-updated">last updated: —</div>
-  </footer>
-
-  <script>
-    // last update stamp
-    var d = new Date(document.lastModified);
-    var formatted = d.getFullYear() + '-'
-      + String(d.getMonth() + 1).padStart(2, '0') + '-'
-      + String(d.getDate()).padStart(2, '0');
-    document.getElementById('last-updated').textContent = 'last updated: ' + formatted;
-  </script>
 
 </body>
 </html>
