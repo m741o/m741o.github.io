@@ -58,11 +58,14 @@
       color: #ff0000;
     }
 
-    .site-title span.green {
-      color: #00ff00;
+    .site-title span.invisible-status {
+      color: #666666;
+      font-style: italic;
       font-size: 10px;
       vertical-align: middle;
       margin-left: 10px;
+      text-transform: lowercase;
+      letter-spacing: normal;
     }
 
     .panel {
@@ -79,6 +82,24 @@
       border-bottom: 1px solid #444444;
       text-transform: uppercase;
       font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .panel-title a {
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+    }
+
+    .panel-thumb {
+      height: 18px;
+      max-width: 60px;
+      object-fit: cover;
+      border: 1px solid #444444;
+      cursor: pointer;
+      display: block;
     }
 
     .panel-content {
@@ -126,6 +147,7 @@
       font-size: 10px;
       font-weight: normal;
       margin-left: 5px;
+      text-transform: uppercase;
     }
 
     .project-desc {
@@ -150,15 +172,6 @@
       color: #ffffff;
       font-weight: bold;
     }
-
-    td.footer {
-      background-color: #000000;
-      color: #666666;
-      text-align: center;
-      font-size: 10px;
-      padding: 10px;
-      border-top: 1px solid #333333;
-    }
   </style>
 </head>
 <body>
@@ -166,7 +179,7 @@
   <table class="layout">
     <tr>
       <td colspan="2" class="header">
-        <div class="site-title">m7<span class="accent">4</span>1o <span class="green">[ONLINE]</span></div>
+        <div class="site-title">m7<span class="accent">4</span>1o <span class="invisible-status">[invisible]</span></div>
       </td>
     </tr>
 
@@ -174,17 +187,14 @@
       <td width="30%" class="column">
         
         <div class="panel">
-          <div class="panel-title">User Profile</div>
+          <div class="panel-title">profile</div>
           <div class="panel-content user-stats">
-            <div>Join Date: <span>Jan 2004</span></div>
-            <div>Posts: <span>1,337</span></div>
-            <div>Reputation: <span style="color: #00ff00;">9,001</span></div>
-            <div>Location: <span>Void</span></div>
+            <div>bday: <span>01.11</span></div>
           </div>
         </div>
 
         <div class="panel">
-          <div class="panel-title">External Links</div>
+          <div class="panel-title">external links</div>
           <div class="panel-content">
             <ul class="forum-list">
               <li><a href="https://www.unknowncheats.me/forum/members/7628834.html" target="_blank">unknowncheats</a></li>
@@ -201,9 +211,9 @@
               <li><a href="https://www.instagram.com/m174o" target="_blank">instagram</a></li>
               <li><a href="https://t.me/m714o" target="_blank">telegram</a></li>
               <li><a href="https://www.reddit.com/user/biohaz4rdous" target="_blank">reddit</a></li>
-              <li><a href="https://discord.gg/YKRW3Egv5G" target="_blank">discord [TERMED]</a></li>
-              <li><a href="https://store.epicgames.com/u/f2f3b0f16d804d8d9d577a5d364ab81d" target="_blank">epic_games</a></li>
-              <li><a href="https://www.tiktok.com/@m741o" target="_blank">tiktok</a></li>
+              <li><a href="https://discord.gg/YKRW3Egv5G" target="_blank">discord_[archived_(TERMED)]</a></li>
+              <li><a href="https://store.epicgames.com/u/f2f3b0f16d804d8d9d577a5d364ab81d" target="_blank">epic_games_(archived)</a></li>
+              <li><a href="https://www.tiktok.com/@m741o" target="_blank">tiktok_(archived)</a></li>
             </ul>
           </div>
         </div>
@@ -213,34 +223,45 @@
       <td width="70%" class="column">
         
         <div class="panel">
-          <div class="panel-title">// Releases & Projects</div>
+          <div class="panel-title">
+            <span>// personal projects</span>
+            <a href="img/personal.png" target="_blank" title="View image">
+              <img src="img/personal.png" class="panel-thumb" alt="preview">
+            </a>
+          </div>
           <div class="panel-content">
             
             <div class="project-item">
               <div class="project-name">
                 <a href="https://github.com/m741o/roblox_fastvariables" target="_blank">roblox_fastvariables</a> 
-                <span class="project-status">[PRIVATE]</span>
+                <span class="project-status">[priv]</span>
               </div>
-              <div class="project-desc">Fast-variable configuration for roblox.</div>
-            </div>
-
-            <div class="project-item">
-              <div class="project-name">
-                <a href="https://github.com/m741o/roblox_essence_fastvariables" target="_blank">roblox_essence_fastvariables</a> 
-                <span class="project-status">[PRIVATE]</span>
-              </div>
-              <div class="project-desc">A tool to use fast-variables in roblox post-whitelist.</div>
+              <div class="project-desc">fast-variable configuration for roblox. tools, guides, archives & sources are explicitly listed</div>
             </div>
 
           </div>
         </div>
 
-      </td>
-    </tr>
+        <div class="panel">
+          <div class="panel-title">
+            <span>// group projects</span>
+            <a href="img/group.png" target="_blank" title="View image">
+              <img src="img/group.png" class="panel-thumb" alt="preview">
+            </a>
+          </div>
+          <div class="panel-content">
+            
+            <div class="project-item">
+              <div class="project-name">
+                empty currently
+                <span class="project-status">[private]</span>
+              </div>
+              <div class="project-desc">wait for ittttt</div>
+            </div>
 
-    <tr>
-      <td colspan="2" class="footer">
-        Copyright &copy; 2004-2026 m741o. All Rights Reserved. 
+          </div>
+        </div>
+
       </td>
     </tr>
   </table>
