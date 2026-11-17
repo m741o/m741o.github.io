@@ -87,21 +87,6 @@
       align-items: center;
     }
 
-    .panel-title a {
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-    }
-
-    .panel-thumb {
-      height: 18px;
-      max-width: 60px;
-      object-fit: cover;
-      border: 1px solid #444444;
-      cursor: pointer;
-      display: block;
-    }
-
     .panel-content {
       padding: 10px;
     }
@@ -135,6 +120,7 @@
 
     .project-item {
       margin-bottom: 10px;
+      overflow: hidden; /* clears the float */
     }
     
     .project-name {
@@ -150,6 +136,10 @@
       text-transform: uppercase;
     }
 
+    .project-status.pending {
+      color: #ffd700;
+    }
+
     .project-desc {
       color: #888888;
       font-size: 11px;
@@ -157,6 +147,19 @@
       padding-left: 10px;
       border-left: 2px solid #333;
       margin-left: 2px;
+    }
+
+    /* New CSS for the per-project image */
+    .project-thumb {
+      max-width: 120px;
+      max-height: 80px;
+      object-fit: cover;
+      border: 1px solid #444444;
+      float: right;
+      margin-left: 15px;
+      margin-bottom: 5px;
+      cursor: pointer;
+      display: block;
     }
 
     .user-stats {
@@ -171,6 +174,21 @@
     .user-stats span {
       color: #ffffff;
       font-weight: bold;
+    }
+
+    .doxbin-link:hover {
+      color: #ff0000 !important;
+      text-decoration: line-through !important;
+      animation: glitch 0.2s infinite;
+    }
+
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-1px, 1px); }
+      40% { transform: translate(-1px, -1px); }
+      60% { transform: translate(1px, 1px); }
+      80% { transform: translate(1px, -1px); }
+      100% { transform: translate(0); }
     }
   </style>
 </head>
@@ -200,7 +218,7 @@
               <li><a href="https://www.unknowncheats.me/forum/members/7628834.html" target="_blank">unknowncheats</a></li>
               <li><a href="https://github.com/m741o" target="_blank">github</a></li>
               <li><a href="https://pastebin.com/u/m741o" target="_blank">pastebin</a></li>
-              <li><a href="https://doxbin.com/user/m741o" target="_blank">doxbin</a></li>
+              <li><a href="https://doxbin.com/user/m741o" class="doxbin-link" target="_blank">doxbin</a></li>
               <li><a href="https://steamcommunity.com/id/m741o" target="_blank">steam</a></li>
               <li><a href="https://www.roblox.com/users/919964840/profile" target="_blank">roblox</a></li>
               <li><a href="https://osu.ppy.sh/users/23868435" target="_blank">osu</a></li>
@@ -225,15 +243,15 @@
         <div class="panel">
           <div class="panel-title">
             <span>// personal projects</span>
-            <a href="img/personal.png" target="_blank" title="View image">
-              <img src="img/personal.png" class="panel-thumb" alt="preview">
-            </a>
           </div>
           <div class="panel-content">
             
             <div class="project-item">
+              <a href="img/essence.png" target="_blank" title="View image">
+                <img src="img/essence.png" class="project-thumb" alt="preview" onerror="this.parentElement.style.display='none';">
+              </a>
               <div class="project-name">
-                <a href="https://github.com/m741o/roblox_fastvariables" target="_blank">roblox_fastvariables</a> 
+                <a href="https://github.com/m741o/roblox_fastvariables" target="_blank">roblox_fastvariables</a>
                 <span class="project-status">[priv]</span>
               </div>
               <div class="project-desc">fast-variable configuration for roblox. tools, guides, archives & sources are explicitly listed</div>
@@ -245,18 +263,18 @@
         <div class="panel">
           <div class="panel-title">
             <span>// group projects</span>
-            <a href="img/group.png" target="_blank" title="View image">
-              <img src="img/group.png" class="panel-thumb" alt="preview">
-            </a>
           </div>
           <div class="panel-content">
             
             <div class="project-item">
+              <a href="img/iridium.png" target="_blank" title="View image">
+                <img src="img/iridium.png" class="project-thumb" alt="preview" onerror="this.parentElement.style.display='none';">
+              </a>
               <div class="project-name">
-                empty currently
-                <span class="project-status">[private]</span>
+                <a href="https://discord.gg/getiridium" target="_blank">iridium</a>
+                <span class="project-status pending">[pending release]</span>
               </div>
-              <div class="project-desc">wait for ittttt</div>
+              <div class="project-desc">my contribution: protection & ideas | GET IRIDIUM NOW!! quality ud cheats, more info in the server.</div>
             </div>
 
           </div>
@@ -265,6 +283,78 @@
       </td>
     </tr>
   </table>
+
+  <div class="panel" style="max-width: 900px; margin: 15px auto 0;">
+    <div class="panel-title">
+      <span>// terminal</span>
+    </div>
+    <div class="panel-content" style="background: #000; color: #ffffff; font-family: monospace; font-size: 12px; height: 120px; overflow-y: auto;" id="terminal-window">
+      <div id="terminal-output"></div>
+      <div style="display: flex; margin-top: 5px;">
+        <span style="margin-right: 5px; color: #ffffff;">&gt;</span>
+        <input type="text" id="terminal-input" style="background: transparent; border: none; color: #ffffff; font-family: monospace; font-size: 12px; outline: none; flex: 1;" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+  </div>
+
+  <script src="js/terminal-config.js"></script>
+  <script>
+    const input = document.getElementById('terminal-input');
+    const output = document.getElementById('terminal-output');
+    const windowDiv = document.getElementById('terminal-window');
+
+    output.innerHTML = terminalConfig.baseOutput;
+
+    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    let konamiIndex = 0;
+
+    input.addEventListener('keydown', function(e) {
+      
+      if (e.key === konamiCode[konamiIndex]) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+          output.innerHTML += `<br><span style="color: #fff;">&gt; ↑↑↓↓←→←→BA</span><br>`;
+          output.innerHTML += `<span style="color: #ff0000; font-weight: bold;">KONAMI CODE ACTIVATED. H4X0R MODE UNLOCKED.</span><br>`;
+          document.body.style.backgroundColor = "#8A0303";
+          setTimeout(() => { document.body.style.backgroundColor = "#111111"; }, 2000);
+          konamiIndex = 0;
+          input.value = '';
+        }
+      } else {
+        konamiIndex = 0;
+      }
+
+      if (e.key === 'Enter') {
+        const val = input.value.toLowerCase().trim();
+        input.value = '';
+        
+        if (!val) return;
+
+        output.innerHTML += `<br><span style="color: #fff;">&gt; ${val}</span><br>`;
+
+        if (val === 'clear') {
+          output.innerHTML = `${terminalConfig.baseOutput}<br>`;
+        } else {
+          let triggered = false;
+          for (let egg of terminalConfig.easterEggs) {
+            if (egg.triggers.some(trigger => val.includes(trigger))) {
+              output.innerHTML += `<span style="color: ${egg.color}; font-weight: bold;">${egg.text}</span><br>`;
+              triggered = true;
+              break;
+            }
+          }
+          
+          if (!triggered) {
+            output.innerHTML += `<span style="color: #aaaaaa;">${terminalConfig.errorPrefix}${val}</span><br>`;
+          }
+        }
+        
+        windowDiv.scrollTop = windowDiv.scrollHeight;
+      }
+    });
+
+    windowDiv.addEventListener('click', () => input.focus());
+  </script>
 
 </body>
 </html>
