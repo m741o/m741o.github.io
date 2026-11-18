@@ -109,7 +109,7 @@ const terminalConfig = {
 		color: "#00ff00"
 	},
 	{
-		triggers: ["sudo install opsec"],
+		triggers: ["sudo apt install opsec"],
 		text: "send me monero first",
 		color: "#aaaaaa"
 	},
