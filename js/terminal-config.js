@@ -1,5 +1,5 @@
 const terminalConfig = {
-  baseOutput: "barebone terminal LOL (type 'help' for commands)",
+  baseOutput: "LOL terminal (type 'help' for commands)",
   errorPrefix: "command not found: ",
 
   easterEggs: [
